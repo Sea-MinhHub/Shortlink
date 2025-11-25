@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sea | Minh - URL Shortener</title>
+    
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container" id="mainContainer">
+        <div class="logo">
+            <img src="Logo.jpg" alt="Sea Minh Logo">
+        </div>
+        
+        <h1>Sea | Minh</h1>
+        <p class="subtitle">Make your links shorter and easier to share</p>
+        
+        <div class="setup-notice" id="setupNotice">
+            <h3>⚙️ Setup Required</h3>
+            <p>To enable link storage for everyone, please configure <code>config.js</code></p>
+            <ol style="margin-left: 20px; margin-top: 10px;">
+                <li>Create a GitHub Personal Access Token (Classic)</li>
+                <li>Permissions needed: <code>gist</code> (full access)</li>
+                <li>Edit <code>config.js</code> with your credentials</li>
+            </ol>
+            <p style="margin-top: 10px; font-size: 14px;">💡 Without setup, links will only work on this browser</p>
+        </div>
+
+        <div class="input-group">
+            <label for="longUrl">Enter your long URL:</label>
+            <input type="url" id="longUrl" placeholder="https://example.com/very-long-url..." required>
+        </div>
+
+        <div class="captcha-box" id="captchaBox">
+            <div class="captcha-question" id="captchaQuestion"></div>
+            <div class="captcha-input">
+                <input type="text" id="captchaAnswer" placeholder="Your answer" autocomplete="off">
+            </div>
+        </div>
+
+        <div class="rate-limit-warning" id="rateLimit" style="display: none;">
+            ⚠️ Rate limit: Maximum 5 URLs per hour to prevent spam
+        </div>
+
+        <p class="error" id="error"></p>
+        <p class="success" id="success"></p>
+        
+        <button class="btn" id="shortenBtn" onclick="shortenUrl()">Shorten URL</button>
+        
+        <div class="result" id="result">
+            <p class="result-label">✅ Your shortened URL:</p>
+            <div class="short-url">
+                <div class="url-display" id="shortUrl"></div>
+                <button class="copy-btn" id="copyBtn" onclick="copyUrl()">Copy</button>
+            </div>
+            <div class="info-box">
+                <p><strong>📊 Link Statistics:</strong></p>
+                <p>🔗 Original URL: <span id="originalUrl"></span></p>
+                <p>📅 Created: <span id="createdDate"></span></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load JavaScript files -->
+    <script src="config.js"></script>
+    <script src="database.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
