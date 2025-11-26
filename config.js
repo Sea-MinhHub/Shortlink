@@ -18,7 +18,7 @@ const CONFIG = {
     GITHUB_USERNAME: 'sea-minhhub',
     
     // Gist ID (leave empty for auto-creation)
-    GIST_ID: '',
+    GIST_ID: 'd366816d0515d267a3d639c2173d044e',
     
     // Base URL for shortened links
     BASE_URL: 'http://sea-minhhub.github.io/Shortlink/',
